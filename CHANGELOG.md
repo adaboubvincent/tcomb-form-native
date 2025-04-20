@@ -10,6 +10,13 @@
 
 **Note**: Gaps between patch versions are faulty/broken releases.
 
+## v0.6.12
+
+- **New Feature**
+    - Update modal usage by changing “Picker” to “Modal” react-native for the Android version
+    - added the ability to style Picker modal items for the IOS version (I didn't like to update modal Picker to modal react native, since I'm on windows and I don't have the possibility to test modal react native after implementation)
+
+
 ## 0.6.11
 
 - **New Feature**
