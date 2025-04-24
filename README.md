@@ -2,7 +2,12 @@ I forked this from gcanti to keep things updated.
 
 updates from original gcanti repo:
 - Select components exported from `@react-native-picker/picker`
-- Datepicker components exported from `@react-native-community/datetimepicker` and fixed necessary prop names
+- Datepicker components exported from `@react-native-community/datetimepicker` and fixed necessary prop names (for IOS)
+- Update modal usage by changing “Picker” to “Modal” react-native for the Android version
+- added the ability to style Picker modal items for the IOS version (I didn't like to update modal Picker to modal react native, since I'm on windows and I don't have the possibility to test modal react native after implementation)
+- Update DatetimePicker to using 'react-native-modal-datetime-picker' datetime for Android
+- Update textbox to apply spaces when entering numbers
+- Customize the display of multi-line TextInputs for forms stored in json that don't have the option of redefining call functions on fields integrally in the json schema
 
 ---
 

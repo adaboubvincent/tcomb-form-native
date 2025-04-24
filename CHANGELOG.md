@@ -10,11 +10,92 @@
 
 **Note**: Gaps between patch versions are faulty/broken releases.
 
+## v0.6.13
+- **New Feature**
+    - Customize the display of multi-line TextInputs for forms stored in json that don't have the option of redefining call functions on fields integrally in the json schema
+        ````
+        // Option attributes added
+
+        "textboxMultilineStyle"
+        "maxHeight"
+        
+        ```
+    - Update textbox to apply spaces when entering numbers
+        ```
+        "123456"            =>      "123 456"
+        "123456.78"         =>      "123 456.78"
+        "123456.7890"       =>      "123 456.7 890"
+        "1000000.0012"      =>      "1 000 000.0 012"
+        ```
+    - Update DatetimePicker to using 'react-native-modal-datetime-picker' datetime for Android
+        - Example :
+            ```
+            // For schema
+            {
+                "options": {
+                    "fields": {
+                        "dateDeLaReunion": {
+                            "help": "DD-MM-YYYY",
+                            "i18n": {
+                                "optional": "",
+                                "required": "*"
+                            },
+                            "label": "Date de la réunion",
+                            "mode": "date"
+                        }
+                    }
+                },
+                "page": {
+                    "type": "object",
+                    "properties": {
+                    "dateDeLaReunion": {
+                        "type": "string",
+                        "format": "date"
+                    }
+                    },
+                    "required": [
+                        "dateDeLaReunion"
+                    ]
+                }
+            }
+
+            // Add this in your code if you use 'tcomb-json-schema'
+            const transform = require('tcomb-json-schema');
+            const t = require('tcomb-form-native');
+
+            transform.resetFormats();
+
+            transform.registerFormat("date", t.Date); // for datetime : transform.registerFormat("datetime", t.Date); for time : transform.registerFormat("time", t.Date);
+
+            ```
+
+            ````
+            // Option attributes added
+
+            "theme"
+            "labelToday"
+            "dateLabelStyle"
+            "dateBtnTodayStyle"
+            "todayLabelStyle"
+            "dateContainerViewStyle"
+            
+            ```
+
 ## v0.6.12
 
 - **New Feature**
     - Update modal usage by changing “Picker” to “Modal” react-native for the Android version
     - added the ability to style Picker modal items for the IOS version (I didn't like to update modal Picker to modal react native, since I'm on windows and I don't have the possibility to test modal react native after implementation)
+        ````
+        // Option attributes added
+
+        "itemTouchableOpacityStyle"
+        "modalStyle"
+        "modalContainerStyle"
+        "itemSelectedStyle"
+        "chevronStyle"
+
+        ```
 
 
 ## 0.6.11
